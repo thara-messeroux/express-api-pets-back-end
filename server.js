@@ -4,6 +4,10 @@
 
 const dotenv = require("dotenv");
 dotenv.config();
+
+// Import routes and other modules
+const petRoutes = require("./controllers/pet");
+const userRoutes = require("./controllers/user");
 const express = require("express");
 const app = express();
 const logger = require("morgan");
