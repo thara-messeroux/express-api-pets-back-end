@@ -15,6 +15,21 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 
 ---
 
+## How to Run
+
+1. Install dependencies:
+   - `npm install`
+
+2. Add your MongoDB connection string to `.env`:
+   - `MONGODB_URI=your_mongodb_connection_string_here`
+
+3. Start the development server:
+   - `npm run dev`
+
+4. Test routes using Postman or `curl`
+
+---
+
 ## Step 1 🐣
 - Updated the `POST /pets` route to return `201 Created`
 - Added better error handling with `500 Internal Server Error`
@@ -129,5 +144,20 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `Middleware` → run logic before requests reach routes
 - `Security` → allow only trusted origins
 - `Client-Server Communication` → connect the front end and back end safely
+
+---
+
+## Key Takeaways
+- Built a back-end API with `Express` and `MongoDB`
+- Practiced full `CRUD` operations
+- Used `Mongoose` models and route controllers
+- Added validation for cleaner pet data
+- Added `CORS` so a browser front end can connect safely
+- Tested API endpoints with `Postman` and `curl`
+
+---
+
+## Conclusion
+This project built a complete pets API that can create, read, update, and delete pet data. It also introduced important back-end patterns like validation, routing, middleware, and client-server communication. These are core skills used in real software engineering work.
 
 ---
