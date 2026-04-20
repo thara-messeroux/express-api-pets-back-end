@@ -35,5 +35,23 @@ router.post("/", async (req, res) => {
   }
 });
 
+// GET /pets
+// Return all pets from the database
+// "When a GET request is made to the /pets endpoint, 
+// find all pets in the database and return them as JSON. 
+// If there's an error, return a 500 status code with the error message."
+router.get("/", async (req, res) => {
+  try {
+    // Find every pet in the collection
+    const foundPets = await Pet.find();
+
+    // 200 = request worked successfully
+    res.status(200).json(foundPets);
+  } catch (error) {
+    // 500 = something went wrong on the server
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
     
