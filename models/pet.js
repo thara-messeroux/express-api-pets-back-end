@@ -17,6 +17,18 @@ const petSchema = mongoose.Schema({
     min: 0,
     required: true,
   },
+  image: String,
   breed: String,
+  owner: {
+    ref: "User",
+    type: mongoose.Schema.Types.ObjectId,
+  }
+}, 
+{
+  timestamps: true,
 });
 
+// Create the pet model
+
+const Pet = mongoose.model("Pet", petSchema);
+module.exports = Pet;
