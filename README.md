@@ -135,6 +135,7 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - Installed the `cors` package
 - Added CORS middleware in `server.js`
 - Allowed requests from `http://localhost:5173`
+- Added a basic `users` route to support future owner-user relationships
 
 ### Why it matters
 - This lets a front-end app talk to the API from the browser

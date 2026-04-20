@@ -24,7 +24,7 @@ app.use(logger("dev"));
 
 // Routes
 app.use("/pets", petRoutes);
-app.use("/users", userRoutes);
+// app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Pets API is running!");
