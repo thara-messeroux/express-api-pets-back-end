@@ -1,8 +1,8 @@
+// controllers/pet.js
 
 const express = require("express");
 const router = express.Router();
 const Pet = require("../models/pet");
-
 
 
 // Routes go here
@@ -20,17 +20,20 @@ DELETE	deletePet	204	/pets/:petId	Delete a pet
 
 // POST	create	200	/pets	Create a pet
 
-// Import the pet model
+// POST /pets
+// Create a new pet in the database
 router.post("/", async (req, res) => {
   try {
+    // Save the new pet using data from the request body
     const newPet = await Pet.create(req.body);
-    res.json(newPet);
+
+    // 201 = successfully created a new resource
+    res.status(201).json(newPet);
   } catch (error) {
-    res.jsaon({ error: error.message });
+    // 500 = something went wrong on the server
+    res.status(500).json({ error: error.message });
   }
 });
-
-
 
 module.exports = router;
     

@@ -7,7 +7,8 @@ const mongoose = require("mongoose");
 
 // Define the pet schema
 
-const petSchema = mongoose.Schema({
+const petSchema = mongoose.Schema(
+    {
   name: {
     type: String,
     required: true,
