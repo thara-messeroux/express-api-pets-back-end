@@ -13,6 +13,8 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `RESTful routes`
 - `Postman` or `curl` for testing API endpoints
 
+---
+
 ## Step 1 🐣
 - Updated the `POST /pets` route to return `201 Created`
 - Added better error handling with `500 Internal Server Error`
@@ -26,6 +28,8 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `CRUD` → Create
 - `REST` → use the correct HTTP status code
 - `Error Handling` → send clear server error responses
+
+---
 
 ## Step 2 🐥
 - Added the `GET /pets` index route
@@ -41,3 +45,39 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `CRUD` → Read
 - `REST` → `GET /pets` follows a standard API pattern
 - `Separation of Concerns` → route logic stays in the controller
+
+---
+
+## Step 3 🐶
+- Added the `GET /pets/:petId` show route
+- Used `Pet.findById()` to fetch one pet by its id
+- Added `404 Not Found` handling when the pet does not exist
+- Kept `500` handling for server errors
+
+### Why it matters
+- This route lets the app open one pet’s details
+- It teaches how to use route params and handle missing data safely
+
+### Engineering principle used
+- `CRUD` → Read one
+- `REST` → `GET /pets/:petId` is the standard show route
+- `Error Handling` → send `404` when the pet is missing
+
+---
+
+## Step 3.6 🐻
+- Added a check to require the pet `type`
+- Added a fallback default image when no image is provided
+- Kept the pet name length validation in the create route
+
+### Why it matters
+- This keeps pet data more complete
+- It prevents empty image fields from breaking the UI
+- It improves data quality before saving to MongoDB
+
+### Engineering principle used
+- `Validation` → require important fields
+- `Defensive Programming` → handle missing input safely
+- `User Experience` → provide a default image instead of a blank one
+
+---
