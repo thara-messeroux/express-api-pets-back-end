@@ -26,6 +26,10 @@ app.use(logger("dev"));
 app.use("/pets", petRoutes);
 // app.use("/users", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Pets API is running!");
+});
+
 // Start server
 app.listen(3000, () => {
   console.log("The express app is ready!");
