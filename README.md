@@ -81,3 +81,20 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `User Experience` → provide a default image instead of a blank one
 
 ---
+
+## Step 4 🐱
+- Added the `DELETE /pets/:petId` route
+- Used `Pet.findByIdAndDelete()` to remove one pet by id
+- Added `404 Not Found` handling when the pet does not exist
+- Tested delete success and delete-not-found behavior
+
+### Why it matters
+- This route lets the app remove pets from the database
+- It completes the delete part of CRUD
+
+### Engineering principle used
+- `CRUD` → Delete
+- `REST` → `DELETE /pets/:petId` is the standard delete route
+- `Error Handling` → return `404` if the pet is already gone
+
+---
