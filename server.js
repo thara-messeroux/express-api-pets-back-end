@@ -1,7 +1,6 @@
 // server.js
 
 // Import dependencies
-
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -16,6 +15,10 @@ require("./db/connection");
 
 app.use(express.json());
 app.use(logger("dev"));
+
+// Use routes
+app.use("/pets", petRoutes);
+// app.use("/users", userRoutes);
 
 // Routes go here
 

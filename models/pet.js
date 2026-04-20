@@ -18,6 +18,10 @@ const petSchema = mongoose.Schema({
     required: true,
   },
   image: String,
+  type: {
+    type: String,
+    required: true,
+  },
   breed: String,
   owner: {
     ref: "User",

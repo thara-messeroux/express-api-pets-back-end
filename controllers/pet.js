@@ -1,6 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
+const Pet = require("../models/pet");
 
 
 
@@ -17,4 +18,19 @@ DELETE	deletePet	204	/pets/:petId	Delete a pet
 
 */
 
+// POST	create	200	/pets	Create a pet
+
+// Import the pet model
+router.post("/", async (req, res) => {
+  try {
+    const newPet = await Pet.create(req.body);
+    res.json(newPet);
+  } catch (error) {
+    res.jsaon({ error: error.message });
+  }
+});
+
+
+
 module.exports = router;
+    
