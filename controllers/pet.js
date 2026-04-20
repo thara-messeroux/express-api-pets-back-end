@@ -83,6 +83,44 @@ router.get("/:petId", async (req, res) => {
   }
 });
 
+// PUT /pets/:petId
+// Update one pet by its id
+router.put("/:petId", async (req, res) => {
+  try {
+    // Keep validation consistent during updates too
+    if (req.body.name && req.body.name.trim().length < 3) {
+      throw new Error("Pet name must be at least 3 characters.");
+    }
+
+    // If type is included, do not allow it to be empty
+    if (req.body.type === "") {
+      throw new Error("Please provide the type of pet.");
+    }
+
+    // If image is included but left blank, use the fallback image
+    if (req.body.image === "") {
+      req.body.image =
+        "https://sugarplumnannies.com/wp-content/uploads/2015/11/dog-placeholder.jpg";
+    }
+
+    // Find the pet by id and update it
+    const updatedPet = await Pet.findByIdAndUpdate(req.params.petId, req.body, {
+      new: true,
+    });
+
+    // If no pet was found, send 404
+    if (!updatedPet) {
+      return res.status(404).json({ error: "Pet not found." });
+    }
+
+    // 200 = update worked
+    res.status(200).json(updatedPet);
+  } catch (error) {
+    // 500 = something went wrong on the server
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // DELETE /pets/:petId
 // Delete one pet by its id
 router.delete("/:petId", async (req, res) => {

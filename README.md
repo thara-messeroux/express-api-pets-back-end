@@ -98,3 +98,20 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `Error Handling` → return `404` if the pet is already gone
 
 ---
+
+## Step 5 🐼
+- Added the `PUT /pets/:petId` route
+- Used `Pet.findByIdAndUpdate()` to update one pet by id
+- Returned the updated pet in the response
+- Added `404 Not Found` handling when the pet does not exist
+
+### Why it matters
+- This route lets the app edit pet information already stored in the database
+- It completes the update part of CRUD
+
+### Engineering principle used
+- `CRUD` → Update
+- `REST` → `PUT /pets/:petId` is the standard update route
+- `Error Handling` → return `404` if the pet is missing
+
+---
