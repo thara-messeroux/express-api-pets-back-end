@@ -115,3 +115,19 @@ It allows a developer to create, read, update, and delete pet data. It also demo
 - `Error Handling` → return `404` if the pet is missing
 
 ---
+
+## Step 6 🦊
+- Installed the `cors` package
+- Added CORS middleware in `server.js`
+- Allowed requests from `http://localhost:5173`
+
+### Why it matters
+- This lets a front-end app talk to the API from the browser
+- It prevents browser blocking when the front end and back end use different local addresses
+
+### Engineering principle used
+- `Middleware` → run logic before requests reach routes
+- `Security` → allow only trusted origins
+- `Client-Server Communication` → connect the front end and back end safely
+
+---
